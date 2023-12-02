@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+        <title>Birth-Day Reminder</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                text-align: center;
+                margin: 20px;
+            }
+            #reminder{
+                color: #333;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Birth-Day Reminder</h1>
+        <div id="reminder"></div>
+        <script>
+            const currentDate = new Date();
+            const birthdayDate = new Date(currentDate.getFullYear(), 0, 31);
+            const daysUntilBirthday = Math.ceil((birthdayDate - currentDate) / (1000 * 60 * 60 * 24));
+            if (daysUntilBirthday === 0) {
+                document.getElementById('remider').innerHTML = "Happy Birthday!!";
+            }else {
+                document.getElementById('reminder').innerHTML = `Days until the next birthday: ${daysUntilBirthday}`
+            }
+        </script>
+    </body>
+</html>
